@@ -1,0 +1,60 @@
+﻿@page "/"
+@using CarteiraControlerWebApplication.DTOs
+
+@inject Services.IBscScanService bscScanService;
+
+@if (transacoesDTOs == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Token</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var result in transacoesDTOs.result)
+            {
+                var token = (double)result.Value * Math.Pow(10, -18);
+                var data = DateTimeOffset.FromUnixTimeSeconds(long.Parse(result.TimeStamp)).ToString("dd/MM/yyyyy");
+                <tr>
+                    <td>@data</td>
+                    <td>@result.Type</td>
+                    <td>@result.TokenSymbol</td>
+                    <td>@token</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@code{
+    public TransacoesDTO transacoesDTOs;
+    public string teste = "";
+    public string compraOuVenda = "";
+
+
+
+    string wallateAddress = "0xb5095b96DB692eC5D6507Ef1EcEaB8BE6Bc95e16";
+    string contractaddress = "0x00e1656e45f18ec6747f5a8496fd39b50b38396d";
+
+    protected override async Task OnInitializedAsync()
+    {
+        transacoesDTOs = await bscScanService.GetApi(wallateAddress,contractaddress);
+        teste = transacoesDTOs.result[0].To;
+    }
+
+
+    private bool isBuy(string transactionWallet, string wallateAddress)
+    {
+        return transactionWallet.Contains(wallateAddress.ToLower()) ;
+    }
+}

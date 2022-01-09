@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarteiraControlerWebApplication", "CarteiraControlerWebApplication\CarteiraControlerWebApplication.csproj", "{65878F85-98B1-4530-B508-46A43C6CEA04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65878F85-98B1-4530-B508-46A43C6CEA04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65878F85-98B1-4530-B508-46A43C6CEA04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65878F85-98B1-4530-B508-46A43C6CEA04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65878F85-98B1-4530-B508-46A43C6CEA04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A87C276-5E07-431A-BC7B-BDCD1C3F7C0F}
+	EndGlobalSection
+EndGlobal
