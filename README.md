@@ -1,1 +1,2 @@
-# GerenciadorCarteira---Binance-Smart-Chain-
+# GerenciadorCarteira-Binance-Smart-Chain
+com Blazor
